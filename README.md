@@ -1,22 +1,23 @@
 # purescript-record
 
-[![Latest release](http://img.shields.io/bower/v/purescript-record.svg)](https://github.com/purescript/purescript-record/releases)
-[![Build Status](https://travis-ci.org/purescript/purescript-record.svg?branch=master)](https://travis-ci.org/purescript/purescript-record)
+[![Latest release](http://img.shields.io/github/release/purescript/purescript-record.svg)](https://github.com/purescript/purescript-record/releases)
+[![Build status](https://github.com/purescript/purescript-record/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-record/actions?query=workflow%3ACI+branch%3Amaster)
+[![Pursuit](https://pursuit.purescript.org/packages/purescript-record/badge)](https://pursuit.purescript.org/packages/purescript-record)
 
 Functions for working with records and polymorphic labels
 
 ## Installation
 
 ```
-bower install purescript-record
+spago install record
 ```
 
 ## Examples
 
-Given some Symbol ("type level String") Proxy (`SProxy`) and a constrained or concrete record type, you can use this library to generically modify records.
+Given some Symbol ("type level String") Proxy and a constrained or concrete record type, you can use this library to generically modify records.
 
 ```purs
-x_ = SProxy :: SProxy "x"
+x_ = Proxy :: Proxy "x"
 
 -- we can get a value out of a field
 gotX :: Int
@@ -49,7 +50,7 @@ mergedXY = Record.merge { x: 1 } { y: 1 }
 
 See the [tests](./test/Main.purs) for more examples.
 
-If you need to combine multiple operations and avoid intermediate values, you might consider using either [Record.Builder](https://pursuit.purescript.org/packages/purescript-record/docs/Record.Builder) or [Record.ST](https://pursuit.purescript.org/packages/purescript-record/docs/Record.ST).
+If you need to combine multiple operations and avoid intermediate values, you might consider using [Record.Builder](https://pursuit.purescript.org/packages/purescript-record/docs/Record.Builder).
 
 You can also find an explanation and example of how to use this library [in this tutorial](https://purescript-simple-json.readthedocs.io/en/latest/inferred-record-types.html) of the Simple-JSON docs.
 
